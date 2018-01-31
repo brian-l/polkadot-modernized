@@ -5,9 +5,7 @@ export LANG="en_US.UTF-8"
 
 ZSH_THEME="gnzh"
 
-plugins = (
-    git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
