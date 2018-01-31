@@ -3,6 +3,7 @@ import polkadot
 
 AUTOLOAD_DIR = '.vim/autoload'
 BUNDLE_DIR = '.vim/bundle'
+VIM_TMP_DIR = '.vim/tmp'
 
 DOTFILES = [
     polkadot.mkdir('git'),
@@ -14,7 +15,7 @@ DOTFILES = [
         '%s/pathogen.vim' % AUTOLOAD_DIR,
         'https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim'
     ),
-    polkadot.mkdir('.vim/tmp'),
+    polkadot.mkdir(VIM_TMP_DIR),
     polkadot.copy('*', 'dotfiles/*'),
 ]
 

@@ -1,63 +1,15 @@
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-let g:jedi#popup_on_dot = 0
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let g:sparkupExecuteMapping = '<C-e>'
-let vimclojure#WantNailgun = 0
-set colorcolumn=132
-highlight ColorColumn ctermbg=237
-set cursorline
-hi CursorLine cterm=NONE ctermbg=237
-set incsearch
-highlight ExtraWhitespace ctermbg=81 guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/   
-autocmd BufWinLeave * call clearmatches()
-set scrolloff=9001
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_lost=1
-let g:syntastic_enable_signs=1
-set laststatus=2
-
-let g:vim_json_syntax_conceal=0
-
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-" nmap <C-f> :call NumberToggle()<cr>
-" autocmd InsertEnter * :set number
-" autocmd InsertLeave * :set relativenumber
-set ic
-set background=dark
-colorscheme solarized
-let g:jedi#force_pycmd='python'
-let g:jedi#popup_on_dot=0
-let g:jedi#show_call_signatures=0
-let g:gitgutter_max_signs=10000
-highlight SignColumn ctermbg=0
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-" Vundle stuff
-set nocompatible
-filetype off
 
 execute pathogen#infect()
-
 syntax enable
 
-
 "Settings
+set ic
+set colorcolumn=132
 set backup
-set backupdir=~/.vim/tmp/
+set backupdir={{ DOTFILES_HOME_DIRECTORY }}/{{ VIM_TMP_DIR }}
 set swapfile
 set wrap
 set number
@@ -71,7 +23,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
+set viminfo='20,<1000,s10,h
+set backspace=2
 set autoindent
 set nocompatible
 set showmatch
@@ -90,9 +43,9 @@ set ignorecase
 "Shows that you are typing as command
 set showcmd
 "highlight current line
-"set cul
 if v:version > 700
-	set cursorline
+    set cursorline
+    hi CursorLine cterm=NONE ctermbg=237
 	" hi CursorLine		gui=bold,reverse	cterm=NONE ctermbg=17 guibg=17
 	" hi CursorColumn gui=bold,reverse	cterm=NONE ctermbg=17 guibg=17
 endif
@@ -114,11 +67,29 @@ colorscheme solarized
 " Salt states are yaml
 au BufRead,BufNewFile *.sls set filetype=yaml
 
+highlight SignColumn ctermbg=0
+highlight ColorColumn ctermbg=237
+highlight ExtraWhitespace ctermbg=81 guibg=red
+
+match ExtraWhitespace /\s\+$/
+
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 "Mappings
 nnoremap ; :
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-set viminfo='20,<1000,s10,h
-set backspace=2
-
 let g:jsx_ext_required = 0
+let g:jedi#force_pycmd='python'
+let g:jedi#popup_on_dot=0
+let g:jedi#show_call_signatures=0
+let g:gitgutter_max_signs=10000
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_lost=1
+let g:syntastic_enable_signs=1
+let g:sparkupExecuteMapping = '<C-e>'
+let g:vim_json_syntax_conceal=0
+
