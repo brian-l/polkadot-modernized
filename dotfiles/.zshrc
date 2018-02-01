@@ -39,4 +39,4 @@ bindkey '^[[8~' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[[Z' undo
 
-eval $(dircolors {{ DOTFILES_HOME_DIRECTORY }}/.dircolors-solarized/dircolors.256dark)
+eval $(dircolors {{ DOTFILES_HOME_DIRECTORY }}/git/dircolors-solarized/dircolors.256dark)

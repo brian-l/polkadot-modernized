@@ -20,7 +20,6 @@ DOTFILES = [
 ]
 
 plugins = [
-    ('tcomment_vim', 'https://github.com/tomtom/tcomment_vim.git'),
     ('snipmate-snippets', 'https://github.com/honza/vim-snippets.git'),
     ('syntastic', 'https://github.com/scrooloose/syntastic.git'),
     ('tcomment_vim', 'https://github.com/tomtom/tcomment_vim.git'),
@@ -32,7 +31,6 @@ plugins = [
     ('vim-gitgutter', 'https://github.com/airblade/vim-gitgutter.git'),
     ('vim-javascript', 'https://github.com/pangloss/vim-javascript.git'),
     ('vim-json', 'https://github.com/elzr/vim-json.git'),
-    ('vim-jst', 'https://github.com/briancollins/vim-jst.git'),
     ('vim-jsx', 'https://github.com/mxw/vim-jsx.git'),
     ('vim-less', 'https://github.com/groenewege/vim-less'),
     ('vim-snipmate', 'https://github.com/garbas/vim-snipmate.git'),
