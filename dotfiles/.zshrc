@@ -1,4 +1,4 @@
-export ZSH="{{ DOTFILES_HOME_DIRECTORY }}/.oh-my-zsh"
+export ZSH="{{ DOTFILES_HOME_DIRECTORY }}/git/oh-my-zsh"
 export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
