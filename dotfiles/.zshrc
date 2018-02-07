@@ -20,18 +20,12 @@ alias grep="grep --color=auto"
 #keybinds for x terminals
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
 
 #for tmux
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
-bindkey '^[OC' forward-word
-bindkey '^[OD' backward-word
 
 #for urxvt
-bindkey '\eOc' forward-word
-bindkey '\eOd' backward-word
 bindkey	'^[[7~' beginning-of-line
 bindkey '^[[8~' end-of-line
 
