@@ -5,7 +5,7 @@ export LANG="en_US.UTF-8"
 
 ZSH_THEME="gnzh"
 
-plugins=(git)
+plugins=(git zsh-dircolors-solarized)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,4 +33,4 @@ bindkey '^[[8~' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[[Z' undo
 
-eval $(dircolors {{ DOTFILES_HOME_DIRECTORY }}/git/dircolors-solarized/dircolors.256dark)
+setupsolarized

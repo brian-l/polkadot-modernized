@@ -8,7 +8,13 @@ VIM_TMP_DIR = '.vim/tmp'
 DOTFILES = [
     polkadot.mkdir('git'),
     polkadot.gitclone('git/oh-my-zsh', 'https://github.com/robbyrussell/oh-my-zsh.git'),
-    polkadot.gitclone('git/dircolors-solarized', 'https://github.com/seebi/dircolors-solarized.git'),
+    polkadot.gitclone(
+        'git/oh-my-zsh/custom/plugins/zsh-dircolors-solarized',
+        'https://github.com/joel-porquet/zsh-dircolors-solarized',
+        git_kwargs = {
+            'recursive': True,
+        }
+    ),
     polkadot.mkdir(AUTOLOAD_DIR),
     polkadot.mkdir(BUNDLE_DIR),
     polkadot.download(
