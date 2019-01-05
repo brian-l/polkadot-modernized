@@ -2,10 +2,13 @@ export ZSH="{{ DOTFILES_HOME_DIRECTORY }}/git/oh-my-zsh"
 export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export TERM="rxvt-unicode"
+export EDITOR="/usr/bin/vim"
+export GPG_TTY=$(tty)
 
 ZSH_THEME="gnzh"
 
-plugins=(git zsh-dircolors-solarized)
+plugins=(git zsh-dircolors-solarized vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
