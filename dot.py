@@ -17,10 +17,6 @@ DOTFILES = [
     ),
     polkadot.mkdir(AUTOLOAD_DIR),
     polkadot.mkdir(BUNDLE_DIR),
-    polkadot.download(
-        '%s/pathogen.vim' % AUTOLOAD_DIR,
-        'https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim'
-    ),
     polkadot.mkdir(VIM_TMP_DIR),
     polkadot.copy('*', 'dotfiles/*'),
 ]
@@ -40,6 +36,9 @@ plugins = [
     ('vim-jsx', 'https://github.com/mxw/vim-jsx.git'),
     ('vim-less', 'https://github.com/groenewege/vim-less'),
     ('vim-snipmate', 'https://github.com/garbas/vim-snipmate.git'),
+    ('vim-terraform', 'https://github.com/hashivim/vim-terraform.git'),
+    ('Vundle.vim', 'https://github.com/VundleVim/Vundle.vim.git'),
+    ('YouCompleteMe', 'https://github.com/ycm-core/YouCompleteMe'),
 ]
 
 for name, repository in plugins:

@@ -36,4 +36,6 @@ bindkey '^[[8~' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[[Z' undo
 
+alias hgrep="history | grep "
+
 setupsolarized

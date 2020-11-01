@@ -1,8 +1,32 @@
-call pathogen#infect()
-syntax on
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/snipmate-snippets'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/syntastic'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/tcomment_vim'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/tlib_vim'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-addon-mw-utils'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-airline'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-colors-solarized'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-fireplace'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-gitgutter'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-javascript'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-json'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-jsx'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-less'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-snipmate'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/vim-terraform'
+Plugin 'file:///{{ DOTFILES_HOME_DIRECTORY }}/{{ BUNDLE_DIR }}/YouCompleteMe'
+
+
+call vundle#end()
 filetype plugin indent on
 
-execute pathogen#infect()
 syntax enable
 
 "Settings
@@ -82,10 +106,6 @@ autocmd BufWinLeave * call clearmatches()
 nnoremap ; :
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-let g:jsx_ext_required = 0
-let g:jedi#force_pycmd='python'
-let g:jedi#popup_on_dot=0
-let g:jedi#show_call_signatures=0
 let g:gitgutter_max_signs=10000
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_lost=1
