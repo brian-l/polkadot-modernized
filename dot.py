@@ -23,7 +23,9 @@ DOTFILES = [
     polkadot.copy('*', 'dotfiles/*'),
     polkadot.download(NEOVIM_CONFIG_AUTOLOAD_DIR + '/plug.vim', 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'),
     polkadot.gitclone('.pyenv', 'https://github.com/pyenv/pyenv.git'),
-    polkadot.gitclone('.pyenv/plugins/pyenv-virtualenv', 'https://github.com/pyenv/pyenv-virtualenv.git')
+    polkadot.gitclone('.pyenv/plugins/pyenv-virtualenv', 'https://github.com/pyenv/pyenv-virtualenv.git'),
+    polkadot.mkdir('bin'),
+    polkadot.copy('bin/*', 'bin/*'),
 ]
 
 plugins = [

@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "{{ DOTFILES_HOME_DIRECTORY }}/git"
+TMUX_CMD="/usr/bin/tmux"
+$TMUX_CMD attach -t default || $TMUX_CMD new -s default

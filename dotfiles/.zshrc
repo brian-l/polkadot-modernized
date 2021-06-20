@@ -6,7 +6,7 @@ export TERM="rxvt-unicode"
 export EDITOR="/usr/bin/vim"
 export GPG_TTY=$(tty)
 export FONTCONFIG_PATH=/etc/fonts
-export PATH="$PATH:{{ DOTFILES_HOME_DIRECTORY }}/.pyenv/bin"
+export PATH="$PATH:{{ DOTFILES_HOME_DIRECTORY }}/.pyenv/bin:{{ DOTFILES_HOME_DIRECTORY }}/bin"
 
 ZSH_THEME="gnzh"
 
@@ -44,5 +44,5 @@ alias vim="nvim"
 setupsolarized
 
 source ~/.fzf.zsh
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
