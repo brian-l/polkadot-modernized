@@ -2,8 +2,9 @@ import polkadot
 
 
 AUTOLOAD_DIR = '.vim/autoload'
-BUNDLE_DIR = '.vim/bundle'
 VIM_TMP_DIR = '.vim/tmp'
+NEOVIM_CONFIG_DIR = '.config/nvim'
+NEOVIM_CONFIG_AUTOLOAD_DIR = '.config/nvim/autoload'
 
 DOTFILES = [
     polkadot.mkdir('git'),
@@ -16,14 +17,17 @@ DOTFILES = [
         }
     ),
     polkadot.mkdir(AUTOLOAD_DIR),
-    polkadot.mkdir(BUNDLE_DIR),
     polkadot.mkdir(VIM_TMP_DIR),
+    polkadot.mkdir(NEOVIM_CONFIG_DIR),
+    polkadot.mkdir(NEOVIM_CONFIG_AUTOLOAD_DIR),
     polkadot.copy('*', 'dotfiles/*'),
+    polkadot.download(NEOVIM_CONFIG_AUTOLOAD_DIR + '/plug.vim', 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'),
+    polkadot.gitclone('.pyenv', 'https://github.com/pyenv/pyenv.git'),
+    polkadot.gitclone('.pyenv/plugins/pyenv-virtualenv', 'https://github.com/pyenv/pyenv-virtualenv.git')
 ]
 
 plugins = [
-    ('snipmate-snippets', 'https://github.com/honza/vim-snippets.git'),
-    ('syntastic', 'https://github.com/scrooloose/syntastic.git'),
+    ('NeoSolarized', 'https://github.com/overcache/NeoSolarized.git'),
     ('tcomment_vim', 'https://github.com/tomtom/tcomment_vim.git'),
     ('tlib_vim', 'https://github.com/tomtom/tlib_vim.git'),
     ('vim-addon-mw-utils', 'https://github.com/MarcWeber/vim-addon-mw-utils.git'),
@@ -32,14 +36,12 @@ plugins = [
     ('vim-fireplace', 'https://github.com/tpope/vim-fireplace.git'),
     ('vim-gitgutter', 'https://github.com/airblade/vim-gitgutter.git'),
     ('vim-javascript', 'https://github.com/pangloss/vim-javascript.git'),
+    ('vim-jinja2-syntax', 'https://github.com/Glench/Vim-Jinja2-Syntax.git'),
     ('vim-json', 'https://github.com/elzr/vim-json.git'),
     ('vim-jsx', 'https://github.com/mxw/vim-jsx.git'),
     ('vim-less', 'https://github.com/groenewege/vim-less'),
-    ('vim-snipmate', 'https://github.com/garbas/vim-snipmate.git'),
     ('vim-terraform', 'https://github.com/hashivim/vim-terraform.git'),
-    ('Vundle.vim', 'https://github.com/VundleVim/Vundle.vim.git'),
-    ('YouCompleteMe', 'https://github.com/ycm-core/YouCompleteMe'),
 ]
 
 for name, repository in plugins:
-    DOTFILES.append(polkadot.gitclone('%s/%s' % (BUNDLE_DIR, name), repository))
+    DOTFILES.append(polkadot.gitclone('%s/%s' % (NEOVIM_CONFIG_DIR, name), repository))

@@ -5,6 +5,8 @@ export LANG="en_US.UTF-8"
 export TERM="rxvt-unicode"
 export EDITOR="/usr/bin/vim"
 export GPG_TTY=$(tty)
+export FONTCONFIG_PATH=/etc/fonts
+export PATH="$PATH:{{ DOTFILES_HOME_DIRECTORY }}/.pyenv/bin"
 
 ZSH_THEME="gnzh"
 
@@ -37,5 +39,10 @@ bindkey '^[[3~' delete-char
 bindkey '^[[Z' undo
 
 alias hgrep="history | grep "
+alias vim="nvim"
 
 setupsolarized
+
+source ~/.fzf.zsh
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
