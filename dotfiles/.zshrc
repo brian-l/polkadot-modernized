@@ -40,6 +40,8 @@ bindkey '^[[Z' undo
 
 alias hgrep="history | grep "
 alias vim="nvim"
+# pass aliases like nvim to sudo
+alias sudo="sudo "
 
 setupsolarized
 
